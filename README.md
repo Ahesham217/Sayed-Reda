@@ -4,6 +4,17 @@
 
 A static professional site for Sayed Reda ELSayed, Software and Service Engineer. Arabic (right to left) is the default; English is available from the header.
 
+## Cloudflare
+
+The site is a Workers Static Assets project. From this folder:
+
+```bash
+npm install
+npx wrangler deploy
+```
+
+`npx wrangler dev` serves it locally.
+
 ## العرض المحلي
 
 من جذر المستودع:
