@@ -2,8 +2,9 @@
   "name": "sayed-reda",
   "private": true,
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy"
+    "dev": "python3 -m http.server 8765",
+    "pages:prepare": "rm -rf .pages && mkdir -p .pages && cp -a index.html favicon.svg css js fonts .pages/",
+    "deploy": "npm run pages:prepare && wrangler pages deploy .pages --project-name sayed-reda --branch main --commit-dirty=true"
   },
   "devDependencies": {
     "wrangler": "^4.102.0"

@@ -7,8 +7,6 @@
   <meta name="description" content="الموقع المهني للمهندس السيد رضا السيد، مهندس برمجيات وخدمات فنية في شركة الفاليو للتكنولوجيا. أنظمة CAD/CAM/CAE، وSOLIDWORKS، ودعم آلات CNC متعددة المحاور.">
   <meta name="author" content="Sayed Reda ELSayed">
   <meta name="theme-color" content="#14181f">
-  <!-- ضع بريد التواصل هنا ليفتح تطبيق البريد. اتركه فارغاً لنسخ الرسالة إلى الحافظة. Set a real inbox to open the email app; leave empty to copy the message. -->
-  <meta name="contact-email" content="">
   <meta property="og:title" content="السيد رضا السيد | مهندس برمجيات وخدمات فنية">
   <meta property="og:description" content="الموقع المهني للمهندس السيد رضا السيد، مهندس برمجيات وخدمات فنية في شركة الفاليو للتكنولوجيا.">
   <meta property="og:type" content="profile">
@@ -42,11 +40,6 @@
         }
       } catch (err) {}
       if (window.scrollY < 40) document.documentElement.classList.add("at-top");
-      var emailMeta = document.querySelector('meta[name="contact-email"]');
-      var email = emailMeta && emailMeta.content ? emailMeta.content.trim() : "";
-      if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        document.documentElement.classList.add("contact-ready");
-      }
     })();
   </script>
   <script type="application/ld+json">
@@ -55,6 +48,9 @@
     "@type": "Person",
     "name": "Sayed Reda ELSayed",
     "alternateName": "السيد رضا السيد",
+    "honorificPrefix": "Eng.",
+    "email": "sayedrelsayed@gmail.com",
+    "telephone": "+201142430729",
     "jobTitle": "Software and Service Engineer",
     "worksFor": {
       "@type": "Organization",
@@ -86,7 +82,7 @@
   </a>
   <noscript>
     <div class="noscript">
-      <p>تفعيل JavaScript يشغّل البحث في الشهادات، وتبديل اللغة، وتجهيز رسالة التواصل. نص الصفحة مقروء بدون ذلك.</p>
+      <p>تفعيل JavaScript يشغّل البحث في الشهادات وتبديل اللغة. نص الصفحة مقروء بدون ذلك.</p>
     </div>
   </noscript>
 
@@ -103,8 +99,9 @@
         <a href="#about"><span class="nav-idx">01</span><span class="lar">عن المهندس</span><span class="len">About</span></a>
         <a href="#highlights"><span class="nav-idx">02</span><span class="lar">أبرز الإنجازات</span><span class="len">Highlights</span></a>
         <a href="#experience"><span class="nav-idx">03</span><span class="lar">الخبرات العملية</span><span class="len">Experience</span></a>
-        <a href="#certifications"><span class="nav-idx">04</span><span class="lar">الشهادات والتراخيص</span><span class="len">Certifications</span></a>
-        <a href="#skills"><span class="nav-idx">05</span><span class="lar">المهارات والتخصصات</span><span class="len">Skills</span></a>
+        <a href="#training"><span class="nav-idx">04</span><span class="lar">الدورات</span><span class="len">Courses</span></a>
+        <a href="#certifications"><span class="nav-idx">05</span><span class="lar">الشهادات والتراخيص</span><span class="len">Certifications</span></a>
+        <a href="#skills"><span class="nav-idx">06</span><span class="lar">المهارات والتخصصات</span><span class="len">Skills</span></a>
         <a class="btn-nav" href="#contact"><span class="lar">تواصل معي</span><span class="len">Contact</span></a>
       </nav>
       <button type="button" id="lang-toggle" class="lang-toggle" aria-label="التبديل إلى الإنجليزية">
@@ -170,11 +167,11 @@
           </div>
           <div class="plate-split">
             <dt>CSWE</dt>
-            <dd class="status-value"><span class="lar">متطلبات الدخول مستوفاة</span><span class="len">Entry requirements met</span></dd>
+            <dd class="status-value"><span class="lar">الشهادات المطلوبة مكتسبة</span><span class="len">Required certificates held</span></dd>
           </div>
           <div>
             <dt>CSWE-S</dt>
-            <dd class="status-value"><span class="lar">متطلبات الدخول مستوفاة</span><span class="len">Entry requirements met</span></dd>
+            <dd class="status-value"><span class="lar">الشهادات المطلوبة مكتسبة</span><span class="len">Required certificates held</span></dd>
           </div>
         </dl>
       </div>
@@ -220,19 +217,19 @@
         <div class="cards-2">
           <article class="card">
             <p class="kicker">CSWE &amp; CSWE-Simulation</p>
-            <h3><span class="lar">الجاهزية لشهادات الخبراء المتقدمة</span><span class="len">Advanced expert-certification readiness</span></h3>
+            <h3><span class="lar">شهادات الخبراء المتقدمة</span><span class="len">Advanced expert certificates</span></h3>
             <p class="status-line">
-              <span class="lar">الحالة: متطلبات دخول الاختبار مستوفاة، دون الادعاء بحيازة CSWE أو CSWE-S.</span>
-              <span class="len">Status: exam entry requirements are met. This is not a claim that CSWE or CSWE-S has been awarded.</span>
+              <span class="lar">الشهادات المطلوبة لدخول اختبارَي CSWE وCSWE-S مكتسبة رسمياً من Dassault Systèmes.</span>
+              <span class="len">The certificates required for the CSWE and CSWE-S exams were officially acquired from Dassault Systèmes.</span>
             </p>
             <ul class="bullets">
               <li>
-                <span class="lar">استيفاء كافة المتطلبات المسبقة لدخول اختبار خبير SOLIDWORKS المعتمد (Certified SOLIDWORKS Expert - CSWE) من خلال حيازة شهادة CSWP بالإضافة إلى 4 شهادات احترافية متقدمة.</span>
-                <span class="len">All prerequisites for the Certified SOLIDWORKS Expert (CSWE) exam are met, through CSWP plus 4 advanced professional certifications.</span>
+                <span class="lar">حيازة رسمية لشهادة CSWP بالإضافة إلى 4 شهادات احترافية متقدمة، وهي متطلبات دخول اختبار خبير SOLIDWORKS المعتمد (Certified SOLIDWORKS Expert - CSWE).</span>
+                <span class="len">Officially holds CSWP plus 4 advanced professional certifications, the entry requirements for the Certified SOLIDWORKS Expert (CSWE) exam.</span>
               </li>
               <li>
-                <span class="lar">استيفاء كافة متطلبات اختبار خبير المحاكاة (CSWE-Simulation / CSWE-S) بحيازة شهادات CSWP، وCSWA-Simulation (CSWA-S)، وCSWP-Simulation (CSWP-S).</span>
-                <span class="len">All requirements for the CSWE-Simulation (CSWE-S) exam are met, through CSWP, CSWA-Simulation (CSWA-S), and CSWP-Simulation (CSWP-S).</span>
+                <span class="lar">حيازة رسمية لشهادات CSWP، وCSWA-Simulation (CSWA-S)، وCSWP-Simulation (CSWP-S)، وهي متطلبات اختبار خبير المحاكاة (CSWE-Simulation / CSWE-S).</span>
+                <span class="len">Officially holds CSWP, CSWA-Simulation (CSWA-S), and CSWP-Simulation (CSWP-S), the requirements for the CSWE-Simulation (CSWE-S) exam.</span>
               </li>
             </ul>
           </article>
@@ -337,15 +334,59 @@
       </div>
     </section>
 
-    <section id="certifications" class="section band">
+    <section id="training" class="section band">
       <div class="wrap">
         <header class="section-head">
-          <p class="kicker"><span dir="ltr">04</span> <span class="lar" lang="en">Certifications</span></p>
+          <p class="kicker"><span dir="ltr">04</span> <span class="lar" lang="en">Training Delivered</span></p>
+          <h2><span class="lar">التدريب الذي قدّمته</span><span class="len">Training delivered</span></h2>
+        </header>
+        <p class="section-intro">
+          <span class="lar">ضمن عمله مهندس برمجيات وخدمات فنية في شركة الفاليو للتكنولوجيا، يقدّم دورات تدريبية متقدمة وتدريباً تقنياً متخصصاً للفرق الهندسية التابعة للعملاء.</span>
+          <span class="len">As Software and Service Engineer at Value Technologies, he delivers advanced courses and specialized technical training to customer engineering teams.</span>
+        </p>
+        <dl class="course-facts">
+          <div>
+            <dt><span class="lar">الجهة</span><span class="len">Organization</span></dt>
+            <dd><span class="lar">شركة الفاليو للتكنولوجيا</span><span class="len">Value Technologies</span></dd>
+          </div>
+          <div>
+            <dt><span class="lar">الجمهور</span><span class="len">Audience</span></dt>
+            <dd><span class="lar">الفرق الهندسية لدى العملاء</span><span class="len">Customer engineering teams</span></dd>
+          </div>
+          <div>
+            <dt><span class="lar">المستوى</span><span class="len">Level</span></dt>
+            <dd><span class="lar">دورات متقدمة وتدريب تقني متخصص</span><span class="len">Advanced and specialized technical training</span></dd>
+          </div>
+        </dl>
+        <div class="cards-3">
+          <article class="card">
+            <p class="kicker" lang="en">SOLIDWORKS</p>
+            <h3><span class="lar">دورات SOLIDWORKS</span><span class="len">SOLIDWORKS courses</span></h3>
+            <p><span class="lar">تدريب تقني متخصص للفرق الهندسية لدى العملاء على برامج SOLIDWORKS.</span><span class="len">Specialized technical training for customer engineering teams on SOLIDWORKS.</span></p>
+          </article>
+          <article class="card">
+            <p class="kicker" lang="en">ESPRIT CAM</p>
+            <h3><span class="lar">دورات ESPRIT CAM</span><span class="len">ESPRIT CAM courses</span></h3>
+            <p><span class="lar">تدريب تقني متخصص للفرق الهندسية لدى العملاء على برنامج ESPRIT CAM.</span><span class="len">Specialized technical training for customer engineering teams on ESPRIT CAM.</span></p>
+          </article>
+          <article class="card">
+            <p class="kicker" lang="en">CNC</p>
+            <h3><span class="lar">دورات آلات CNC</span><span class="len">CNC machine courses</span></h3>
+            <p><span class="lar">تدريب تقني متخصص للفرق الهندسية لدى العملاء على آلات التشغيل الرقمي CNC.</span><span class="len">Specialized technical training for customer engineering teams on CNC machine tools.</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="section">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="kicker"><span dir="ltr">05</span> <span class="lar" lang="en">Certifications</span></p>
           <h2><span class="lar">الشهادات والتراخيص</span><span class="len">Certifications</span></h2>
         </header>
         <p class="section-intro">
-          <span class="lar">الشهادات الصادرة عن Dassault Systèmes. الصفّان المميزان يوثّقان استيفاء متطلبات دخول اختبارَي CSWE وCSWE-S، وليس لهما تاريخ إصدار منفصل.</span>
-          <span class="len">Credentials issued by Dassault Systèmes. The two marked rows record that the CSWE and CSWE-S exam entry requirements are met; they have no separate issue date.</span>
+          <span class="lar">شهادات رسمية صادرة عن Dassault Systèmes، تم الحصول عليها في تواريخ الإصدار الموضحة. الصفّان بدون تاريخ منفصل يوثّقان الحيازة الرسمية لمتطلبات خبير SOLIDWORKS (CSWE) وخبير المحاكاة (CSWE-S).</span>
+          <span class="len">Official Dassault Systèmes certificates, acquired on the issue dates shown. The two rows without a separate issue date record the officially held CSWE and CSWE-S prerequisite certificates.</span>
         </p>
         <div class="toolbar">
           <div class="tool tool-grow">
@@ -449,7 +490,7 @@
               </tr>
               <tr class="is-readiness" data-order="12" data-date="">
                 <td data-label="اسم الشهادة" data-label-ar="اسم الشهادة" data-label-en="Certificate">
-                  <span class="badge lar">جاهزية</span><span class="badge len">Readiness</span>
+                  <span class="badge lar">رسمي</span><span class="badge len">Official</span>
                   <span class="cert-name"><span class="lar">CSWP + 4 Professional Advanced Certifications (متطلبات خبير صوليدوركس CSWE)</span><span class="len" lang="en">CSWP + 4 Professional Advanced Certifications (Certified SOLIDWORKS Expert prerequisites)</span></span>
                 </td>
                 <td class="col-issuer" lang="en" data-label="الجهة المنظمة" data-label-ar="الجهة المنظمة" data-label-en="Issuing body">Dassault Systèmes</td>
@@ -457,7 +498,7 @@
               </tr>
               <tr class="is-readiness" data-order="13" data-date="">
                 <td data-label="اسم الشهادة" data-label-ar="اسم الشهادة" data-label-en="Certificate">
-                  <span class="badge lar">جاهزية</span><span class="badge len">Readiness</span>
+                  <span class="badge lar">رسمي</span><span class="badge len">Official</span>
                   <span class="cert-name"><span class="lar">CSWP + CSWA-Simulation + CSWP-Simulation (متطلبات خبير المحاكاة CSWE-S)</span><span class="len" lang="en">CSWP + CSWA-Simulation + CSWP-Simulation (CSWE-Simulation prerequisites)</span></span>
                 </td>
                 <td class="col-issuer" lang="en" data-label="الجهة المنظمة" data-label-ar="الجهة المنظمة" data-label-en="Issuing body">Dassault Systèmes</td>
@@ -526,7 +567,7 @@
     <section id="skills" class="section">
       <div class="wrap">
         <header class="section-head">
-          <p class="kicker"><span dir="ltr">05</span> <span class="lar" lang="en">Skills &amp; Specializations</span></p>
+          <p class="kicker"><span dir="ltr">06</span> <span class="lar" lang="en">Skills &amp; Specializations</span></p>
           <h2><span class="lar">المهارات والتخصصات</span><span class="len">Skills</span></h2>
         </header>
         <div class="skill-grid">
@@ -579,7 +620,7 @@
       <div class="wrap contact-grid">
         <div>
           <header class="section-head">
-            <p class="kicker"><span dir="ltr">06</span> <span class="lar" lang="en">Contact</span></p>
+            <p class="kicker"><span dir="ltr">07</span> <span class="lar" lang="en">Contact</span></p>
             <h2><span class="lar">تواصل معي</span><span class="len">Contact</span></h2>
           </header>
           <p class="lead">
@@ -602,60 +643,23 @@
           </ul>
           <p class="where"><span class="lar">قسم الدقي، محافظة الجيزة، مصر · دوام كامل · في الموقع</span><span class="len">Dokki, Giza, Egypt · Full-time · On-site</span></p>
         </div>
-        <div class="form-card">
-          <form id="contact-form" action="#contact" method="post" novalidate>
-            <fieldset>
-              <legend class="sr-only"><span class="lar">نموذج التواصل</span><span class="len">Contact form</span></legend>
-              <p class="form-note"><span class="lar">كل الحقول مطلوبة.</span><span class="len">All fields are required.</span></p>
-              <div id="form-errors" class="form-errors" role="alert" hidden></div>
-              <div id="form-status" class="form-status" role="status" hidden></div>
-              <div class="field">
-                <label for="full-name"><span class="lar">الاسم الكامل</span><span class="len">Full name</span><span class="req" aria-hidden="true">*</span></label>
-                <input id="full-name" name="name" type="text" autocomplete="name" required maxlength="120" dir="auto" placeholder="الاسم كما تحب أن نخاطبك به" data-ph-ar="الاسم كما تحب أن نخاطبك به" data-ph-en="How we should address you" aria-describedby="full-name-error">
-                <p class="field-error" id="full-name-error" hidden></p>
-              </div>
-              <div class="field">
-                <label for="email"><span class="lar">البريد الإلكتروني</span><span class="len">Email</span><span class="req" aria-hidden="true">*</span></label>
-                <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="180" dir="ltr" spellcheck="false" placeholder="name@company.com" data-ph-ar="name@company.com" data-ph-en="name@company.com" aria-describedby="email-error">
-                <p class="field-error" id="email-error" hidden></p>
-              </div>
-              <div class="field">
-                <label for="subject"><span class="lar">موضوع الرسالة</span><span class="len">Subject</span><span class="req" aria-hidden="true">*</span></label>
-                <input id="subject" name="subject" type="text" required maxlength="160" dir="auto" placeholder="تدريب، صيانة، أو دعم برمجي" data-ph-ar="تدريب، صيانة، أو دعم برمجي" data-ph-en="Training, maintenance, or software support" aria-describedby="subject-error">
-                <div class="chips" role="group" aria-label="اقتراحات الموضوع" data-label-ar="اقتراحات الموضوع" data-label-en="Subject suggestions">
-                  <button type="button" class="chip" data-subject="training" aria-pressed="false"><span class="lar">تدريب</span><span class="len">Training</span></button>
-                  <button type="button" class="chip" data-subject="maintenance" aria-pressed="false"><span class="lar">صيانة</span><span class="len">Maintenance</span></button>
-                  <button type="button" class="chip" data-subject="support" aria-pressed="false"><span class="lar">دعم برمجي</span><span class="len">Software support</span></button>
-                </div>
-                <p class="field-error" id="subject-error" hidden></p>
-              </div>
-              <div class="field">
-                <label for="message"><span class="lar">نص الرسالة</span><span class="len">Message</span><span class="req" aria-hidden="true">*</span></label>
-                <textarea id="message" name="message" required maxlength="2000" dir="auto" placeholder="اكتب تفاصيل طلبك" data-ph-ar="اكتب تفاصيل طلبك" data-ph-en="Describe your request" aria-describedby="message-error"></textarea>
-                <p class="counter" id="message-counter" aria-hidden="true">0 / 2000</p>
-                <p class="field-error" id="message-error" hidden></p>
-              </div>
-              <div class="form-actions">
-                <button class="btn btn-ink" type="submit">
-                  <span class="when-copy lar">نسخ الرسالة</span>
-                  <span class="when-copy len">Copy message</span>
-                  <span class="when-send lar">إرسال الرسالة</span>
-                  <span class="when-send len">Send message</span>
-                </button>
-                <p class="form-hint when-copy"><span class="lar">تُنسخ الرسالة إلى الحافظة لترسلها بالبريد.</span><span class="len">The message is copied to the clipboard so you can send it by email.</span></p>
-                <p class="form-hint when-send"><span class="lar">سيفتح تطبيق البريد مع الرسالة جاهزة.</span><span class="len">Your email app will open with the message ready.</span></p>
-              </div>
-              <div id="message-preview" class="message-preview" hidden>
-                <p class="preview-label"><span class="lar">الرسالة الجاهزة</span><span class="len">Prepared message</span></p>
-                <pre id="preview-text" dir="auto"></pre>
-                <button type="button" id="copy-again" class="btn btn-ink">
-                  <span class="lar">نسخ مرة أخرى</span>
-                  <span class="len">Copy again</span>
-                </button>
-              </div>
-            </fieldset>
-          </form>
-        </div>
+        <aside class="card contact-card">
+          <h3><span class="lar">بيانات التواصل</span><span class="len">Contact details</span></h3>
+          <dl>
+            <div>
+              <dt><span class="lar">الاسم</span><span class="len">Name</span></dt>
+              <dd lang="en">Eng. Sayed Reda El Sayed</dd>
+            </div>
+            <div>
+              <dt><span class="lar">الهاتف</span><span class="len">Phone</span></dt>
+              <dd><a dir="ltr" href="tel:+201142430729">+20 114 243 0729</a></dd>
+            </div>
+            <div>
+              <dt><span class="lar">البريد الإلكتروني</span><span class="len">Email</span></dt>
+              <dd><a dir="ltr" href="mailto:sayedrelsayed@gmail.com">sayedrelsayed@gmail.com</a></dd>
+            </div>
+          </dl>
+        </aside>
       </div>
     </section>
   </main>

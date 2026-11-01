@@ -14,24 +14,7 @@
   const tbody = table.querySelector("tbody");
   const rows = [...tbody.querySelectorAll("tr")];
   const empty = document.getElementById("cert-empty");
-  const form = document.getElementById("contact-form");
-  const nameInput = document.getElementById("full-name");
-  const emailInput = document.getElementById("email");
-  const subjectInput = document.getElementById("subject");
-  const messageInput = document.getElementById("message");
-  const formErrors = document.getElementById("form-errors");
-  const formStatus = document.getElementById("form-status");
-  const previewWrap = document.getElementById("message-preview");
-  const preview = document.getElementById("preview-text");
-  const copyAgain = document.getElementById("copy-again");
-  const counter = document.getElementById("message-counter");
-  const chips = [...document.querySelectorAll(".chip")];
   const DESKTOP = 1180;
-  const SUBJECTS = [
-    { id: "training", ar: "تدريب", en: "Training" },
-    { id: "maintenance", ar: "صيانة", en: "Maintenance" },
-    { id: "support", ar: "دعم برمجي", en: "Software support" },
-  ];
   const TEXT = {
     ar: {
       title: "السيد رضا السيد | مهندس برمجيات وخدمات فنية",
@@ -155,17 +138,6 @@
       .trim();
   }
 
-  function oneLine(value) {
-    return value.replace(/[\r\n]+/g, " ").trim();
-  }
-
-  function readContactEmail() {
-    const meta = document.querySelector('meta[name="contact-email"]');
-    const value = (meta && meta.content ? meta.content : "").trim();
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return "";
-    return value;
-  }
-
   function setMeta(selector, attr, value) {
     const el = document.querySelector(selector);
     if (el) el.setAttribute(attr, value);
@@ -212,28 +184,11 @@
       opt.textContent = opt.getAttribute(next === "en" ? "data-en" : "data-ar");
     });
 
-    const subjectValue = subjectInput.value.trim();
-    const match = SUBJECTS.find((item) => item.ar === subjectValue || item.en === subjectValue);
-    if (match) subjectInput.value = match[next];
-    syncChips();
-
     langToggle.setAttribute(
       "aria-label",
       next === "en" ? "Switch to Arabic" : "التبديل إلى الإنجليزية"
     );
     syncMenuLabel();
-
-    if (form.dataset.tried === "true") {
-      [nameInput, emailInput, subjectInput, messageInput].forEach((input) => {
-        if (input.getAttribute("aria-invalid") === "true") validateField(input);
-      });
-      if (!formErrors.hidden) {
-        formErrors.textContent =
-          next === "en"
-            ? "The message is not ready yet. Check the highlighted fields."
-            : "تعذّر تجهيز الرسالة. راجع الحقول المظللة.";
-      }
-    }
     renderCount();
   }
 
@@ -333,136 +288,6 @@
     renderCount();
   }
 
-  function syncChips() {
-    const value = subjectInput.value.trim();
-    chips.forEach((chip) => {
-      const item = SUBJECTS.find((entry) => entry.id === chip.dataset.subject);
-      const on = Boolean(item) && (value === item.ar || value === item.en);
-      chip.setAttribute("aria-pressed", on ? "true" : "false");
-    });
-  }
-
-  function messageFor(input) {
-    const english = lang() === "en";
-    const value = input.value.trim();
-    if (!value) return english ? "This field is required." : "هذا الحقل مطلوب.";
-    if (input.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-      return english ? "Enter an email address in a valid format." : "أدخل بريداً إلكترونياً بصيغة صحيحة.";
-    }
-    return "";
-  }
-
-  function validateField(input) {
-    const message = messageFor(input);
-    const error = document.getElementById(input.getAttribute("aria-describedby"));
-    if (message) {
-      input.setAttribute("aria-invalid", "true");
-      if (error) {
-        error.hidden = false;
-        error.textContent = message;
-      }
-      return false;
-    }
-    input.setAttribute("aria-invalid", "false");
-    if (error) {
-      error.hidden = true;
-      error.textContent = "";
-    }
-    return true;
-  }
-
-  function compose() {
-    const data = {
-      name: oneLine(nameInput.value),
-      email: oneLine(emailInput.value),
-      subject: oneLine(subjectInput.value),
-      message: messageInput.value.replace(/\r\n/g, "\n").trim(),
-    };
-    const body = lang() === "en"
-      ? "To: Sayed Reda ELSayed\nName: " + data.name + "\nEmail: " + data.email + "\nSubject: " + data.subject + "\n\nMessage:\n" + data.message
-      : "إلى: المهندس السيد رضا السيد\nالاسم: " + data.name + "\nالبريد الإلكتروني: " + data.email + "\nالموضوع: " + data.subject + "\n\nالرسالة:\n" + data.message;
-    return { data, body };
-  }
-
-  async function copyText(value) {
-    try {
-      await navigator.clipboard.writeText(value);
-      return true;
-    } catch (err) {
-      const helper = document.createElement("textarea");
-      helper.value = value;
-      helper.setAttribute("readonly", "");
-      helper.style.position = "fixed";
-      helper.style.insetInlineStart = "-999px";
-      document.body.appendChild(helper);
-      helper.select();
-      let ok = false;
-      try {
-        ok = document.execCommand("copy");
-      } catch (copyErr) {
-        ok = false;
-      }
-      helper.remove();
-      return ok;
-    }
-  }
-
-  function showStatus(message) {
-    formStatus.hidden = false;
-    formStatus.textContent = message;
-  }
-
-  async function prepareMessage(openMail) {
-    const valid = [nameInput, emailInput, subjectInput, messageInput].every(validateField);
-    if (!valid) {
-      formStatus.hidden = true;
-      formErrors.hidden = false;
-      formErrors.textContent = lang() === "en"
-        ? "The message is not ready yet. Check the highlighted fields."
-        : "تعذّر تجهيز الرسالة. راجع الحقول المظللة.";
-      const first = form.querySelector('[aria-invalid="true"]');
-      if (first) first.focus();
-      return;
-    }
-    formErrors.hidden = true;
-    const { data, body } = compose();
-    preview.textContent = body;
-    previewWrap.hidden = false;
-    const copied = await copyText(body);
-    const email = readContactEmail();
-    if (openMail && email) {
-      const link = document.createElement("a");
-      link.href = "mailto:" + email + "?subject=" + encodeURIComponent(data.subject) + "&body=" + encodeURIComponent(body);
-      link.hidden = true;
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      showStatus(
-        lang() === "en"
-          ? copied
-            ? "Your email app should open with the message ready. A copy is also on the clipboard."
-            : "Your email app should open with the message ready. The same text is in the box below."
-          : copied
-            ? "يُفترض أن يفتح تطبيق البريد والرسالة جاهزة. نُسخت أيضاً إلى الحافظة."
-            : "يُفترض أن يفتح تطبيق البريد والرسالة جاهزة. النص نفسه في المربع أدناه."
-      );
-      return;
-    }
-    showStatus(
-      copied
-        ? lang() === "en"
-          ? "The message was copied to the clipboard. Paste it into your email to send it."
-          : "نُسخت الرسالة إلى الحافظة. الصقها في بريدك لإرسالها."
-        : lang() === "en"
-          ? "The message is ready in the box below. Select it and copy it to send."
-          : "الرسالة جاهزة في المربع أدناه. حدّدها وانسخها لإرسالها."
-    );
-  }
-
-  function updateCounter() {
-    counter.textContent = messageInput.value.length + " / " + messageInput.maxLength;
-  }
-
   menuToggle.addEventListener("click", () => {
     const open = menuToggle.getAttribute("aria-expanded") === "true";
     if (open) closeMenu(false);
@@ -513,40 +338,8 @@
     search.focus();
   });
 
-  chips.forEach((chip) => {
-    chip.addEventListener("click", () => {
-      const item = SUBJECTS.find((entry) => entry.id === chip.dataset.subject);
-      if (!item) return;
-      subjectInput.value = item[lang()];
-      syncChips();
-      if (form.dataset.tried === "true") validateField(subjectInput);
-      subjectInput.focus();
-    });
-  });
-  subjectInput.addEventListener("input", syncChips);
-
-  [nameInput, emailInput, subjectInput, messageInput].forEach((input) => {
-    input.addEventListener("input", () => {
-      if (form.dataset.tried === "true") validateField(input);
-    });
-  });
-  messageInput.addEventListener("input", updateCounter);
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    form.dataset.tried = "true";
-    prepareMessage(true);
-  });
-
-  copyAgain.addEventListener("click", () => {
-    form.dataset.tried = "true";
-    prepareMessage(false);
-  });
-
-  document.documentElement.classList.toggle("contact-ready", Boolean(readContactEmail()));
   const requested = new URLSearchParams(location.search).get("lang");
   applyLanguage(requested === "en" || requested === "ar" ? requested : lang());
-  updateCounter();
   updateChrome();
   applyFilters();
 })();

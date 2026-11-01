@@ -4,16 +4,16 @@
 
 A static professional site for Sayed Reda ELSayed, Software and Service Engineer. Arabic (right to left) is the default; English is available from the header.
 
-## Cloudflare
+## Cloudflare Pages
 
-The site is a Workers Static Assets project. From this folder:
+This is a Cloudflare Pages site, not a Worker. From this folder, with `CLOUDFLARE_ACCOUNT_ID` set and a `CLOUDFLARE_API_TOKEN` that includes Cloudflare Pages edit access:
 
 ```bash
 npm install
-npx wrangler deploy
+npm run deploy
 ```
 
-`npx wrangler dev` serves it locally.
+That publishes the production branch to `https://sayed-reda.pages.dev`.
 
 ## العرض المحلي
 
@@ -24,14 +24,6 @@ python3 -m http.server 8765
 ```
 
 ثم افتح `http://localhost:8765`.
-
-## نموذج التواصل
-
-لا يوجد بريد في مصادر المحتوى، لذلك ينسخ النموذج الرسالة الجاهزة إلى الحافظة. لفتح تطبيق البريد مباشرة، ضع العنوان في:
-
-```html
-<meta name="contact-email" content="name@example.com">
-```
 
 ## الخطوط
 
